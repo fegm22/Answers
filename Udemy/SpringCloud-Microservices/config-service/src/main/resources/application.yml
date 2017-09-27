@@ -1,0 +1,14 @@
+
+
+####################################
+server:
+  port: 9000
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fegm22/Training
+          searchPaths: Udemy/SpringCloud-Microservices/config-repository/customer-account-service,Udemy/SpringCloud-Microservices/config-repository/customer-service
+          username: admin
+          password: 12345678

@@ -5,18 +5,32 @@ public class AddTwoHugeNumbers {
 
     public static void main(String[] args) {
 
-        ListNode<Integer> listaA = new ListNode<>(1);
+        ListNode<Integer> listaA = new ListNode<>(9876);
+        listaA.next = new ListNode<>(5432);
+        listaA.next.next = new ListNode<>(1999);
 
-        ListNode<Integer> listaB = new ListNode<>(9999);
-        listaB.next = new ListNode<>(9999);
-        listaB.next.next = new ListNode<>(9999);
-        listaB.next.next.next = new ListNode<>(9999);
-        listaB.next.next.next.next = new ListNode<>(9999);
-        listaB.next.next.next.next.next = new ListNode<>(9999);
+        ListNode<Integer> listaB = new ListNode<>(1);
+        listaB.next = new ListNode<>(8001);
 
         ListNode<Integer> result = addTwoHugeNumbers(listaA, listaB);
 
     }
+//
+//
+//  public static void main(String[] args) {
+//
+//        ListNode<Integer> listaA = new ListNode<>(1);
+//
+//        ListNode<Integer> listaB = new ListNode<>(9999);
+//        listaB.next = new ListNode<>(9999);
+//        listaB.next.next = new ListNode<>(9999);
+//        listaB.next.next.next = new ListNode<>(9999);
+//        listaB.next.next.next.next = new ListNode<>(9999);
+//        listaB.next.next.next.next.next = new ListNode<>(9999);
+//
+//        ListNode<Integer> result = addTwoHugeNumbers(listaA, listaB);
+//
+//    }
 
     public static ListNode<Integer> addTwoHugeNumbers(ListNode<Integer> a, ListNode<Integer> b) {
 

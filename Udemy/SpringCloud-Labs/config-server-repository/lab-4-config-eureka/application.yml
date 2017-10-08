@@ -1,3 +1,5 @@
+---
+# Items that apply to ALL profiles:
 eureka:
   client:
     serviceUrl:
@@ -19,9 +21,9 @@ spring:
 words: a,the
 
 ---
-#spring:
-#  profiles: adjective
-#words: reasonable,leaky,suspicious,ordinary,unlikely
+spring:
+  profiles: adjective
+words: reasonable,leaky,suspicious,ordinary,unlikely
 
 ---
 spring:

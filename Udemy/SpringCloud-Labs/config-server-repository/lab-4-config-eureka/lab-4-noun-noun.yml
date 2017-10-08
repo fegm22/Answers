@@ -1,0 +1,7 @@
+lab-4-adjective-adjective.yml---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761
+
+words: boat,book,vote,seat,backpack,partition,groundhog

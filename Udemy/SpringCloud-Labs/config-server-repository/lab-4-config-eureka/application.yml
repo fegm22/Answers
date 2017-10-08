@@ -21,10 +21,6 @@ words: a,the
 ---
 spring:
   profiles: adjective
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761
 words: reasonable,leaky,suspicious,ordinary,unlikely
 
 ---

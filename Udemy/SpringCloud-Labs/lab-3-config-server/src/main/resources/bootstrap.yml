@@ -1,0 +1,6 @@
+info:
+  component: Config Server
+spring:
+  application:
+    name: lab-3-config-server
+

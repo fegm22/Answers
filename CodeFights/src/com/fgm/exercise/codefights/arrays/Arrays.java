@@ -5,6 +5,22 @@ import java.util.HashSet;
 
 public class Arrays {
 
+    public static int arrayMaxConsecutiveSum2(int[] inputArray) {
+        //Kadane's algorithm
+        int maxC = inputArray[0];
+        int maxG = maxC;
+
+        for(int i=1; i<inputArray.length; i++ ) {
+            maxC = maxValue(inputArray[i], inputArray[i] + maxC);
+            maxG = maxValue(maxC, maxG);
+        }
+        return maxG;
+    }
+
+    public static int maxValue(int actual, int acumulado){
+        return actual > acumulado ? actual : acumulado;
+    }
+
     public static int[] findLongestSubarrayBySum3(int s, int[] arr) {
         int maxL = -1, maxR = -1, sum = 0, r = 0, l = 0;
 
@@ -119,7 +135,7 @@ public class Arrays {
     }
 
 
-    static boolean isCryptSolution(String[] crypt, char[][] solution) {
+    public static boolean isCryptSolution(String[] crypt, char[][] solution) {
 
         HashMap<Character, Integer> deco = new HashMap<>();
         int sum = 0;
@@ -155,7 +171,7 @@ public class Arrays {
 
     }
 
-    static boolean hasPairSum(int[] a, int sum){
+    public static boolean hasPairSum(int[] a, int sum){
         HashSet<Integer> comp = new HashSet<>();
 
         for(int i=0; i<a.length; i++){
@@ -165,7 +181,7 @@ public class Arrays {
         return false;
     }
 
-    static String reverseParentheses(String s) {
+    public static String reverseParentheses(String s) {
         boolean flag = false;
         StringBuilder rever = new StringBuilder();
 
@@ -190,7 +206,7 @@ public class Arrays {
     }
 
     //[1, 3, -1, 23, 43, -1, -1, 54, -1, -1, -1, 77]
-    static int[] sortByHeight(int[] a) {
+    public static int[] sortByHeight(int[] a) {
         for (int i = 0; i < a.length; ++i) {
             if(a[i]==-1) {
                 continue;

@@ -9,10 +9,7 @@ import sun.jvm.hotspot.utilities.Assert;
 /**
  * Created by fogd on 15.06.17.
  */
-public class App {
-
-    public static Arrays arraysAlgorithm;
-
+public class CodeFightsTests {
 
 
     @Test

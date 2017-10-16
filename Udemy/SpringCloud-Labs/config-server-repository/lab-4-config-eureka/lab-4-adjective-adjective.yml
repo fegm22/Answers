@@ -1,1 +1,6 @@
 words: reasonable,leaky,suspicious,ordinary,unlikely
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/

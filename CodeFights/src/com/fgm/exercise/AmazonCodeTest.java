@@ -113,25 +113,25 @@ public class AmazonCodeTest {
 //    Each Fibonacci number is the sum of the last two.  The first 10 are: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55.
 //    long getNthFibonacci(long i) { ... }
 
-    public static long getNthFibonacci(long i){
-        long seq[] = new long[(int)i];
+    public static long getNthFibonacci(long i) {
+        long seq[] = new long[(int) i];
 
         seq[0] = seq[1] = 1;
 
-        for(int n=2; n<i; n++){
-            seq[n] = seq[n-1] + seq[n-2];
+        for (int n = 2; n < i; n++) {
+            seq[n] = seq[n - 1] + seq[n - 2];
         }
-        return seq[(int)i-1];
+        return seq[(int) i - 1];
     }
 
-    public static long getNthFibonacci2(long i){
+    public static long getNthFibonacci2(long i) {
 
-        if(i==1 || i==2) return 1;
+        if (i == 1 || i == 2) return 1;
         long aux1 = 1;
         long aux2 = 1;
 
         long sum = 0;
-        for(int n=2; n<i; n++){
+        for (int n = 2; n < i; n++) {
             sum = aux1 + aux2;
             aux1 = aux2;
             aux2 = sum;
@@ -140,8 +140,59 @@ public class AmazonCodeTest {
         return sum;
     }
 
+    public static int modifiedAnagrams(String a, String b) {
+        int count = 0;
+        if (a.length() != b.length()) {
+            return -1;
+        } else {
+            int[] lettersA = new int[26];
+            int[] lettersB = new int[26];
+
+            for(int i=0; i<a.length(); i++){
+                Character letterA = a.charAt(i);
+                lettersA[letterA - 'a']++;
+            }
+            for(int j=0; j<b.length(); j++){
+                Character letterB = b.charAt(j);
+                lettersB[letterB- 'a']++;
+            }
+
+            count = 0;
+            for(int z=0; z<26; z++){
+                count = Math.abs(lettersA[z] - lettersB[z]) + count;
+            }
+        }
+        return count;
+    }
+
+    public static int[] amazonTestAnagrams(String[] A, String[] B) {
+
+        int[] result = new int[A.length];
+
+        for(int i=0; i<A.length; i++){
+            String a = A[i];
+            String b = B[i];
+            result[i] = modifiedAnagrams(a, b);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
-        System.out.println(getNthFibonacci2(9));
+        //System.out.println(getNthFibonacci2(9));
+
+        String[] A = new String[3];
+        String[] B = new String[3];
+
+        A[0] = "aaaabbbbccccddddhhhh";
+        A[1] = "aabb";
+        A[2] = "aaaccc";
+        B[0] = "aaaabbbbccccddddhhhe";
+        B[1] = "bbaa";
+        B[2] = "aaaddd";
+
+        int[] result = amazonTestAnagrams(A, B);
+
     }
 
 }

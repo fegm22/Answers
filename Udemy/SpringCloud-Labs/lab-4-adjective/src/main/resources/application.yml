@@ -1,2 +1,5 @@
 
-#words: reasonable,leaky,suspicious,ordinary,unlikely
+words: fallbacks
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}

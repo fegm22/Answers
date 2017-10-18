@@ -1,12 +1,6 @@
 spring:
   application:
     name: lab-4-adjective
-  profiles:
-    active:
-      adjective
   cloud:
     config:
       uri: http://localhost:9000
-
-server:
-  port: ${PORT:${SERVER_PORT:0}}

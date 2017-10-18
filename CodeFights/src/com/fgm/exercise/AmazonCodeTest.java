@@ -1,6 +1,8 @@
 package com.fgm.exercise;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AmazonCodeTest {
 
@@ -148,17 +150,17 @@ public class AmazonCodeTest {
             int[] lettersA = new int[26];
             int[] lettersB = new int[26];
 
-            for(int i=0; i<a.length(); i++){
+            for (int i = 0; i < a.length(); i++) {
                 Character letterA = a.charAt(i);
                 lettersA[letterA - 'a']++;
             }
-            for(int j=0; j<b.length(); j++){
+            for (int j = 0; j < b.length(); j++) {
                 Character letterB = b.charAt(j);
-                lettersB[letterB- 'a']++;
+                lettersB[letterB - 'a']++;
             }
 
             count = 0;
-            for(int z=0; z<26; z++){
+            for (int z = 0; z < 26; z++) {
                 count = Math.abs(lettersA[z] - lettersB[z]) + count;
             }
         }
@@ -169,7 +171,7 @@ public class AmazonCodeTest {
 
         int[] result = new int[A.length];
 
-        for(int i=0; i<A.length; i++){
+        for (int i = 0; i < A.length; i++) {
             String a = A[i];
             String b = B[i];
             result[i] = modifiedAnagrams(a, b);
@@ -178,7 +180,65 @@ public class AmazonCodeTest {
         return result;
     }
 
+    public static int[] maxCardinals(int[] nums, int[] maxes) {
+        Map<Integer, Integer> mapNums = new HashMap<>();
+        int maxNums = getMaximum(nums);
+        int maxMaxes = getMaximum(maxes);
+
+        for (int i = 0; i < nums.length; i++) {
+            if (mapNums.containsKey(nums[i])) {
+                int cont = mapNums.get(nums[i]);
+                mapNums.put(nums[i], ++cont);
+            } else {
+                mapNums.put(nums[i], 1);
+            }
+        }
+
+        int count = 0;
+        int[] arrayAux = new int[maxMaxes + 1];
+        for (int i = 0; i <= maxMaxes; i++) {
+            if (mapNums.containsKey(i)) {
+                arrayAux[i] = mapNums.get(i) + count;
+                count = arrayAux[i];
+            } else {
+                arrayAux[i] = count;
+            }
+        }
+
+        int[] result = new int[maxes.length];
+        for (int i = 0; i < maxes.length; i++) {
+            result[i] = arrayAux[maxes[i]];
+        }
+
+        return result;
+    }
+
+    public static int getMaximum(int[] array) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i] + " ");
+        }
+    }
+
     public static void main(String[] args) {
+        int[] nums = {1, 4, 2, 4};
+        int[] maxes = {3, 5};
+
+        int[] result = maxCardinals(nums, maxes);
+
+        printArray(result);
+    }
+
+    public static void mainAnagram(String[] args) {
         //System.out.println(getNthFibonacci2(9));
 
         String[] A = new String[3];

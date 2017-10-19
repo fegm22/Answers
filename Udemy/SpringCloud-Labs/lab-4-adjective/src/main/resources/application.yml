@@ -1,5 +1,0 @@
-
-words: fallbacks
-
-server:
-  port: ${PORT:${SERVER_PORT:0}}

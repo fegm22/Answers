@@ -42,11 +42,11 @@ public class SentenceController {
     public @ResponseBody
     String getSentenceDiffer() {
         return
-                getWord("LAB-4-SUBJECT") + " "
-                        + getWord2("LAB-4-VERB") + " "
-                        + getWord2("LAB-4-ARTICLE") + " "
-                        + getWord2("LAB-4-ADJECTIVE") + " "
-                        + getWord2("LAB-4-NOUN") + "."
+                getWord("SUBJECT") + " "
+                        + getWord2("VERB") + " "
+                        + getWord2("ARTICLE") + " "
+                        + getWord2("ADJECTIVE") + " "
+                        + getWord2("NOUN") + "."
                 ;
     }
 

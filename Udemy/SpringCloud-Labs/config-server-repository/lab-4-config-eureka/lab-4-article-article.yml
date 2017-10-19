@@ -4,4 +4,4 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-primary:8761/eureka/,http://eureka-secondary:8762/eureka/,http://eureka-tertiary:8763/eureka/
 
-words: a,the
+words: in,at

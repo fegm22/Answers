@@ -13,6 +13,7 @@ public class WordController {
     @GetMapping("/")
     public @ResponseBody
     String getWord() {
+        //words = "icicle,refrigerator,blizzard,snowball";
         String[] wordArray = words.split(",");
         int i = (int) Math.round(Math.random() * (wordArray.length - 1));
         return wordArray[i];

@@ -1,8 +1,0 @@
-server:
-  port: 9002
-spring:
-  application:
-    name: sentence
-  cloud:
-    config:
-      uri: http:localhost:9000
